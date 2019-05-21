@@ -4,14 +4,5 @@
 <% @items.each do |item|  %>
   <li>
   <%= item.title %> posted by <%= item.owner.email %>
-   <div class="card"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @item.photo, height: 300, width: 400, crop: :fill %>')">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
-  </li>
-<% end %>
+  <% end %>
 </ul>
