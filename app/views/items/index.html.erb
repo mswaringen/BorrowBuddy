@@ -3,7 +3,9 @@
 <ul>
 <% @items.each do |item|  %>
   <li>
+  <% if policy(item).create? %>
   <%= item.title %> posted by <%= item.owner.email %>
+  <% end %>
   </li>
 <% end %>
 </ul>
