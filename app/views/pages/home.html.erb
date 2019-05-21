@@ -1,2 +1,31 @@
-<h1>Home</h1>
-<%= link_to 'Items for Rent', items_path %>
+<div class="jumbotron" id="hero">
+  <div class="container">
+    <h1 class="display-3">Borrow what you need</h1>
+    <p>A new way to borrow the things you need, when you need them. Leave your suitcase at home!</p>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter a city" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <%= link_to items_path, class: "btn btn-outline-light btn-lg browse" do %>
+      Browse Items
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4 steps">
+      <%= image_tag("golden-gate.png", class: "icon") %>
+      <h2>Choose a City & Category</h2>
+    </div>
+    <div class="col-md-4 steps">
+      <%= image_tag("bicycle.png", class: "icon") %>
+      <h2>Find the Equipment you Need</h2>
+    </div>
+    <div class="col-md-4 steps">
+      <%= image_tag("goal.png", class: "icon") %>
+      <h2>Pick up Locally and Have Fun!</h2>
+    </div>
+  </div>
+  <hr>
+</div>
