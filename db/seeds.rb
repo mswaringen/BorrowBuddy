@@ -12,11 +12,11 @@ User.destroy_all
 Item.destroy_all
 
 10.times do
-  user = User.new(email: Faker::Internet.email,
+  owner = User.new(email: Faker::Internet.email,
     password: 'topsecret',
     password_confirmation: 'topsecret')
-  user.save(validate: false)
-  item = Item.create!(title: Faker::Appliance.equipment, user_id: user.id )
+  owner.save(validate: false)
+  item = Item.create!(title: Faker::Appliance.equipment, owner_id: owner.id )
 end
 
 
