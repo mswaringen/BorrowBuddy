@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+puts "starting the seed..."
+
+User.destroy_all
+Item.destroy_all
+
+10.times do
+  user = User.new(email: Faker::Internet.email,
+    password: 'topsecret',
+    password_confirmation: 'topsecret')
+  user.save(validate: false)
+  item = Item.create!(title: Faker::Appliance.equipment, user_id: user.id )
+end
+
+
+puts "all done!"    #=> "Christophe Bartell"
+
