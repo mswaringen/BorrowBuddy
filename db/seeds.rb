@@ -18,7 +18,7 @@ Item.destroy_all
     password: 'topsecret',
     password_confirmation: 'topsecret')
   user.save(validate: false)
-  item = Item.create!(title: Faker::Name.name, user_id: user.id )
+  item = Item.create!(title: Faker::Appliance.equipment, user_id: user.id )
 end
 
 
