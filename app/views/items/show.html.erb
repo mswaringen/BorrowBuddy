@@ -1,1 +1,9 @@
-
+<div class="container">
+  <% if policy(Item).show? %>
+    <%= image_tag(@item.photo, class: "item_photo") %>
+    <h4><%= @item.title %></h4>
+    <p><%= @item.description %></p>
+    <p> <%= @item.owner.email %> </p>
+    <p class="price">€<%= @item.price %></p>
+  <% end %>
+</div>
