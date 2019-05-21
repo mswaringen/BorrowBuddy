@@ -13,12 +13,15 @@ Item.destroy_all
 
 10.times do
   owner = User.new(email: Faker::Internet.email,
-    password: 'topsecret',
-    password_confirmation: 'topsecret')
+                   password: 'topsecret',
+                   password_confirmation: 'topsecret')
   owner.save(validate: false)
-  item = Item.create!(title: Faker::Appliance.equipment, owner_id: owner.id )
+  item = Item.create!(title: Faker::Appliance.equipment,
+                      photo: Faker::LoremFlickr.image,
+                      description: Faker::Lorem.words(10, true).join(" "),
+                      price: Faker::Number.number(2),
+                      owner_id: owner.id )
 end
 
 
 puts "all done!"    #=> "Christophe Bartell"
-
