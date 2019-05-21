@@ -1,10 +1,12 @@
-<div class="container">
-  <h1>Items for Rent</h1>
-  <ul>
-    <% @items.each do |item|  %>
-      <li>
-        <%= item.title %> posted by <%= item.owner.email %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<h1>Items for Rent</h1>
+
+<ul>
+<% @items.each do |item|  %>
+  <li>
+  <% if policy(item).create? %>
+  <%= item.title %> posted by <%= item.owner.email %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
