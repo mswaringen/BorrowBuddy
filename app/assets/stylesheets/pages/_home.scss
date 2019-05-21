@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.jumbotron {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_url('guy-kawasaki-668854-unsplash.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+}
+
+.icon {
+  width: 100px;
+  margin: 30px;
+}
+
+.steps {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.browse{
+  margin-top: 20px;
+}
