@@ -1,0 +1,9 @@
+<h1>Items for Rent</h1>
+
+<ul>
+<% @items.each do |item|  %>
+  <li>
+  <%= item.title %> posted by <%= item.owner.email %>
+  </li>
+<% end %>
+</ul>
