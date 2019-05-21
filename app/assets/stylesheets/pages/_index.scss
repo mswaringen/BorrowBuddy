@@ -1,7 +1,28 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  background-color: white;
+}
+
 .page-wrapper {
   width: 100%;
 }
 
+.card {
+  border-color: black;
+  height: 400px;
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.item_photo {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.price {
+  text-align: right;
+  font-weight: bold;
+}

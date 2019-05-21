@@ -1,12 +1,15 @@
-<h1>Items for Rent</h1>
-
-<ul>
-<% @items.each do |item|  %>
-  <li>
-  <% if policy(item).create? %>
-  <%= item.title %> posted by <%= item.owner.email %>
-  <% end %>
-  </li>
-<% end %>
-</ul>
-
+<div class="container">
+  <h1>Items for Rent</h1>
+  <div class="row">
+    <% @items.each do |item|  %>
+      <div class="col-sm-3 card">
+        <%= link_to item_path(item) do  %>
+          <%= image_tag(item.photo, class: "item_photo") %>
+          <h4><%= item.title %></h4>
+          <p><%= item.description %></p>
+          <p class="price">€<%= item.price %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
