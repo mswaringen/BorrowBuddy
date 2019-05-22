@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     @item.owner = current_user
 
     if @item.save
-      redirect_to root_path, notice: 'Item has been created'
+      redirect_to items_path, notice: 'Item has been created'
     else
       render :new
     end
@@ -39,6 +39,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :photo, :price, :availability, :description)
+    params.require(:item).permit(:title, :photo, :price, :availability, :description, :address)
   end
 end
