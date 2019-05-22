@@ -2,7 +2,16 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = policy_scope(Item)
+    @items = policy_scope(Item.where.not(latitude: nil, longitude: nil))
+
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { item: item }),
+        image_url: helpers.asset_url('surf.png')
+      }
+    end
   end
 
   def show

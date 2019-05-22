@@ -13,7 +13,14 @@ Item.destroy_all
 
 puts "old records destroyed"
 
-10.times do
+locations = [
+  'Panteao Nacional Campo de Santa Clara, Lisbon 1100-471, Portugal',
+  'Rua de Santa Cruz do Castelo, 1100-129 Lisboa, Portugal',
+  'Rua do Ouro, 1150-060 Lisboa, Portugal',
+  'Largo do Carmo, 1200-092 Lisboa, Portugal'
+]
+
+4.times do
   owner = User.new(email: Faker::Internet.email,
                    password: 'topsecret',
                    password_confirmation: 'topsecret')
@@ -22,7 +29,9 @@ puts "old records destroyed"
                       remote_photo_url: Faker::LoremFlickr.image,
                       description: Faker::Lorem.words(10, true).join(" "),
                       price: Faker::Number.number(2),
+                      address: locations.first,
                       owner_id: owner.id )
+  locations.shift
 end
 
 

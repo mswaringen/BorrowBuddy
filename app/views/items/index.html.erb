@@ -1,8 +1,8 @@
-<div class="container">
-  <h1>Items for Rent</h1>
-  <div class="row">
+<h1 style="margin-left: 40px;">Items for Rent</h1>
+<div class="main-container">
+  <div class="cards">
     <% @items.each do |item|  %>
-      <div class="col-sm-3 card">
+      <div class="card">
         <%= link_to item_path(item) do  %>
           <%= cl_image_tag(item.photo, class: "item_photo") %>
           <h4><%= item.title %></h4>
@@ -12,4 +12,10 @@
       </div>
     <% end %>
   </div>
+  <div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 </div>
+
