@@ -11,6 +11,8 @@ puts "starting the seed..."
 User.destroy_all
 Item.destroy_all
 
+puts "old records destroyed"
+
 10.times do
   owner = User.new(email: Faker::Internet.email,
                    password: 'topsecret',
