@@ -1,0 +1,15 @@
+<h1>My profile</h1>
+<h2>My listing</h2>
+<div class="row">
+  <% @items.each do |item| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+        <div class="card-product-infos">
+          <h2><%= item.title %></h2>
+          <p><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
