@@ -19,7 +19,7 @@ puts "old records destroyed"
                    password_confirmation: 'topsecret')
   owner.save(validate: false)
   item = Item.create!(title: Faker::Appliance.equipment,
-                      photo: Faker::LoremFlickr.image,
+                      remote_photo_url: Faker::LoremFlickr.image,
                       description: Faker::Lorem.words(10, true).join(" "),
                       price: Faker::Number.number(2),
                       owner_id: owner.id )
