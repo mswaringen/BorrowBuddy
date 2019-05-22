@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_05_21_100849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.string "photo"
+    t.text "photo"
     t.float "price"
     t.date "availability"
     t.bigint "user_id"
