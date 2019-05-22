@@ -2,7 +2,7 @@
   <h1>Items for Rent</h1>
   <div class="row">
     <% @items.each do |item|  %>
-      <div class="col-sm-3 card">
+      <div class="col-xs-12 col-sm-6 col-md-4 card">
         <%= link_to item_path(item) do  %>
           <%= cl_image_tag(item.photo, class: "item_photo") %>
           <h4><%= item.title %></h4>

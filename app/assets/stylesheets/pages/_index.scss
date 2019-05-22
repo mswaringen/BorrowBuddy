@@ -11,14 +11,14 @@ body {
 
 .card {
   border-color: black;
-  height: 400px;
-  width: 200px;
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  max-width: 30%;
+  // padding: 20px;
 }
 
 .item_photo {
   height: 200px;
+  width: 100%;
   margin-bottom: 20px;
 }
 
