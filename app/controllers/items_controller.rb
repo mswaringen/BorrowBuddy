@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     @item.owner = current_user
 
     if @item.save
-      redirect_to root_path, notice: 'Item has been created'
+      redirect_to items_path, notice: 'Item has been created'
     else
       render :new
     end

@@ -4,11 +4,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to @user
     else
@@ -26,7 +28,7 @@ class BookingsController < ApplicationController
   private
 
   def find_user
-    @user = User.find(session[:current_user_id])
+    @user = current_user
   end
 
   def booking_params
