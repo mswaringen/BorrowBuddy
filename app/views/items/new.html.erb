@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Create an offer</h1>
 
 <%= simple_form_for @item do |f| %>
@@ -5,7 +7,11 @@
   <%= f.input :photo %>
   <%= f.input :price %>
   <%= f.input :availability %>
+  <%= f.input :description %>
   <%= f.input :photo_cache, as: :hidden  %>
-  <%= f.submit %>
+ <%= f.submit "Create Item", class: 'form-actions btn btn-outline-dark btn-sm submit_button submit-form-button btn btn btn-lg btn-block' %>
+ </button>
+
 <% end %>
 
+</div >
