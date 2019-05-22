@@ -1,4 +1,4 @@
-class AddColumnsToItem < ActiveRecord::Migration[5.2]
+class AddColumnsToItems < ActiveRecord::Migration[5.2]
   def change
     add_column :items, :description, :text
     add_column :items, :photo, :string
