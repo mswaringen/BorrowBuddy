@@ -5,7 +5,7 @@ ruby '2.5.3'
 gem 'pundit'
 gem 'geocoder'
 gem 'bootsnap', require: false
-gem 'bootstrap'
+
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
