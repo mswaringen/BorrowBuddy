@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     authorize @booking
+    @item = Item.find(params[:item_id])
   end
 
   def create
