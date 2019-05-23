@@ -35,6 +35,63 @@ locations = [
 #   locations.shift
 # end
 
+owner = User.new(email: 'mark@gmail.com',
+                 password: 'topsecret',
+                 password_confirmation: 'topsecret')
+owner.save(validate: false)
+item = Item.create!(title: "Longboard, like new",
+                    remote_photo_url: 'https://www.weekendwarrior.net.au/wp-content/uploads/2017/11/surfboard-zig-zag-front.jpg',
+                    description: 'Very nice board, waxed and ready to ride!',
+                    price: 12,
+                    address: locations.first,
+                    owner_id: owner.id )
+locations.shift
+
+owner = User.new(email: Faker::Internet.email,
+                 password: 'topsecret',
+                 password_confirmation: 'topsecret')
+owner.save(validate: false)
+item = Item.create!(title: "Mountain bike",
+                    remote_photo_url: 'http://content.bikeroar.com/system/content/000/095/390/large/Angel__s_Camp_Muddy_Bike_by_nickrak.jpg?1414544093',
+                    description: 'Great downhill machine, can do it all, loves mud!',
+                    price: 30,
+                    address: locations.first,
+                    owner_id: owner.id )
+locations.shift
+
+owner = User.new(email: Faker::Internet.email,
+                 password: 'topsecret',
+                 password_confirmation: 'topsecret')
+owner.save(validate: false)
+item = Item.create!(title: "Performance skis",
+                    remote_photo_url: 'https://factorydirectcraft.com/pimages/20090310160037-053638/miniature_snow_skis_and_poles.jpg',
+                    description: '170cm, nice rocker for powder days, can still cut on the hard stuff as well',
+                    price: 25,
+                    address: locations.first,
+                    owner_id: owner.id )
+locations.shift
+
+owner = User.new(email: Faker::Internet.email,
+                 password: 'topsecret',
+                 password_confirmation: 'topsecret')
+owner.save(validate: false)
+item = Item.create!(title: "Wet suit, size lrg",
+                    remote_photo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS780ZRQovktuLCRkZArG7UZai-O77IisgmvWlVwhY382lco0wezg',
+                    description: 'Great for those cold days in the water, will keep you going!',
+                    price: 15,
+                    address: locations.first,
+                    owner_id: owner.id )
+locations.shift
+
+
+locations = [
+  'Plaza Mayor, 28012 Madrid, Spain',
+  'Plaza de la Independencia, 7, 28001 Madrid, Spain',
+  'Calle de Santa Isabel, 52, 28012 Madrid, Spain',
+  'Calle de Ferraz, 1, 28008 Madrid, Spain'
+]
+
+
 owner = User.new(email: Faker::Internet.email,
                  password: 'topsecret',
                  password_confirmation: 'topsecret')
@@ -52,8 +109,8 @@ owner = User.new(email: Faker::Internet.email,
                  password_confirmation: 'topsecret')
 owner.save(validate: false)
 item = Item.create!(title: "Mountain bike",
-                    remote_photo_url: Faker::LoremFlickr.image,
-                    description: 'Great downhill machine, can do it all',
+                    remote_photo_url: 'http://content.bikeroar.com/system/content/000/095/390/large/Angel__s_Camp_Muddy_Bike_by_nickrak.jpg?1414544093',
+                    description: 'Great downhill machine, can do it all, loves mud!',
                     price: 30,
                     address: locations.first,
                     owner_id: owner.id )
@@ -64,7 +121,7 @@ owner = User.new(email: Faker::Internet.email,
                  password_confirmation: 'topsecret')
 owner.save(validate: false)
 item = Item.create!(title: "Performance skis",
-                    remote_photo_url: Faker::LoremFlickr.image,
+                    remote_photo_url: 'https://factorydirectcraft.com/pimages/20090310160037-053638/miniature_snow_skis_and_poles.jpg',
                     description: '170cm, nice rocker for powder days, can still cut on the hard stuff as well',
                     price: 25,
                     address: locations.first,
@@ -76,21 +133,10 @@ owner = User.new(email: Faker::Internet.email,
                  password_confirmation: 'topsecret')
 owner.save(validate: false)
 item = Item.create!(title: "Wet suit, size lrg",
-                    remote_photo_url: Faker::LoremFlickr.image,
+                    remote_photo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS780ZRQovktuLCRkZArG7UZai-O77IisgmvWlVwhY382lco0wezg',
                     description: 'Great for those cold days in the water, will keep you going!',
                     price: 15,
                     address: locations.first,
                     owner_id: owner.id )
 locations.shift
-
-
-locations = [
-  'Plaza Mayor, 28012 Madrid, Spain',
-  'Plaza de la Independencia, 7, 28001 Madrid, Spain',
-  'Calle de Santa Isabel, 52, 28012 Madrid, Spain',
-  'Calle de Ferraz, 1, 28008 Madrid, Spain'
-]
-
-
-
 puts "all done!"    #=> "Christophe Bartell"
