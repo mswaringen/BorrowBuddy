@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :items, only: [:index, :show, :create, :new] do
-    resources :bookings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :bookings
   end
 
     get "profile", to: "profiles#dashboard"
