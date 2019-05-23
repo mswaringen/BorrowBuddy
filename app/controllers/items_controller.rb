@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = policy_scope(Item.where.not(latitude: nil, longitude: nil))
+    if params[:search].present?
+      sql_query = "address ILIKE :query"
+      @items = policy_scope(Item.where(sql_query, query: "%#{params[:search]}%"))
+    else
+      @items = policy_scope(Item.where.not(latitude: nil, longitude: nil))
+    end
 
     @markers = @items.map do |item|
       {

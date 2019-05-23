@@ -16,9 +16,9 @@ puts "old records destroyed"
 
 locations = [
   'Panteao Nacional Campo de Santa Clara, Lisbon 1100-471, Portugal',
-  'Rua de Santa Cruz do Castelo, 1100-129 Lisboa, Portugal',
-  'Rua do Ouro, 1150-060 Lisboa, Portugal',
-  'Largo do Carmo, 1200-092 Lisboa, Portugal'
+  'Rua de Santa Cruz do Castelo, 1100-129 Lisbon, Portugal',
+  'Rua do Ouro, 1150-060 Lisbon, Portugal',
+  'Largo do Carmo, 1200-092 Lisbon, Portugal'
 ]
 
 4.times do
