@@ -32,7 +32,7 @@ const initMapbox = () => {
 
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mswaringen/cjw0hzvpq1evo1co3jtfwyb29'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
