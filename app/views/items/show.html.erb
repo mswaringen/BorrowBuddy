@@ -1,14 +1,15 @@
 <% if policy(Item).show? %>
-  <%= cl_image_tag(@item.photo, class: "jumbotron-show") %>
-  <div class="container margin-top-negative">
-    <br>
-    <div class="row">
-      <div class="col-8">
-        <div class="flat-show-card">
-          <div class="flex-tile">
-            <h4><%= @item.title %></h4>
-            <h4 class="price">€<%= @item.price %></h4>
-          </h4>
+
+<%= cl_image_tag(@item.photo, class: "jumbotron-show") %>
+<div class="container margin-top-negative">
+  <br>
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <div class="flex-tile">
+          <h4><%= @item.title %></h4>
+          <h4 class="price-show">€<%= @item.price %></h4></h4>
+
         </div>
         <p><%= @item.address %></p>
       </div>

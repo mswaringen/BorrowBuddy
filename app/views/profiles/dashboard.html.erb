@@ -1,36 +1,48 @@
 <div class = "container" >
+  <div class = "profile-card text-align">
+    <h1>My profile</h1>
+    <p><%= @user.email %></p>
+    <p><%=  @user.username %></p>
+    <%= cl_image_tag @user.photo, class: "profile-pic" %>
+  </div>
 
-<h1>My profile</h1>
-  <p><%=  @user.email %></p>
-  <p><%=  @user.username %></p>
-  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-    <h2 class = "title">My listing</h2>
+  <div class="d-flex justify-content-between">
+
+    <div class = "card-products mr-5">
+      <h2>My listing</h2>
       <div class="row">
-      <% @owned_items.each do |item| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-            <h3><%= item.title %></h3>
-            <p><%= item.description %></p>
-            </div>
+        <% @owned_items.each do |item| %>
+        <div class="col-xs-12 col-sm-6">
+        <div class="card card-dashboard">
+          <%= link_to item_path(item) do  %>
+            <%= cl_image_tag(item.photo, class: "card-dashboard-photo") %>
+            <h4><%= item.title %></h4>
+            <p><%= truncate item.description, length: 100 %></p>
+            <p class="price">€<%= item.price %></p>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class = "card-products ml-5">
+      <h2>My bookings</h2>
+      <div class="row">
+        <% @booked_items.each do |item| %>
+        <div class="col-xs-12 col-sm-6">
+        <div class="card card-dashboard">
+          <%= link_to item_path(item) do  %>
+            <%= cl_image_tag(item.photo, class: "card-dashboard-photo") %>
+            <h4><%= item.title %></h4>
+            <p><%= truncate item.description, length: 100 %></p>
+            <p class="price">€<%= item.price %></p>
+          <% end %>
           </div>
         </div>
         <% end %>
       </div>
 
-   <h2 class = "title">My bookings</h2>
-      <div class="row">
-    <% @booked_items.each do |item| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h5><%= item.title %></h5>
-              <p><%= item.description %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
+  </div>
 </div>
+
