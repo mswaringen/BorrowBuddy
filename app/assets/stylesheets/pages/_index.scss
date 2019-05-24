@@ -10,12 +10,13 @@ body {
 }
 
 .card {
-  border-color: black;
+  // border-color: black;
   height: 400px;
   width: 300px;
   margin: 20px;
   padding: 20px;
   display: flex;
+  box-shadow: 10px 10px 20px;
 }
 
 .item_photo {
@@ -49,6 +50,7 @@ a:hover {
   grid-gap: 16px;
   flex-grow: 1;
   padding: 20px;
+  justify-items: center;
 }
 
 @media(max-width: 992px) {

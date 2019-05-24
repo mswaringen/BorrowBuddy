@@ -1,17 +1,17 @@
 <% if policy(Item).show? %>
-<%= cl_image_tag(@item.photo, class: "jumbotron-show") %>
-<div class="container margin-top-negative">
-  <br>
-  <div class="row">
-    <div class="col-8">
-      <div class="flat-show-card">
-        <div class="flex-tile">
-          <h4><%= @item.title %></h4>
-          <h4 class="price">€<%= @item.price %></h4></h4>
+  <%= cl_image_tag(@item.photo, class: "jumbotron-show") %>
+  <div class="container margin-top-negative">
+    <br>
+    <div class="row">
+      <div class="col-8">
+        <div class="flat-show-card">
+          <div class="flex-tile">
+            <h4><%= @item.title %></h4>
+            <h4 class="price">€<%= @item.price %></h4>
+          </h4>
         </div>
         <p><%= @item.address %></p>
       </div>
-
       <div class="flat-show-card">
         <p><%= @item.description %></p>
       </div>
@@ -19,32 +19,27 @@
     <div class="col-4">
       <div class="flat-show-card">
         <h4>Book this item!</h4>
-
         <%= simple_form_for [@item, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, required: true, input_html: {id: "start_date"} %>
-        <%= f.input :end_date, as: :string, required: true, input_html: {id: "end_date"} %>
-        <div align="center">
-
-        <%= f.submit %>
-        </div>
+          <%= f.input :start_date, as: :string, required: true, input_html: {id: "start_date"} %>
+          <%= f.input :end_date, as: :string, required: true, input_html: {id: "end_date"} %>
+          <div align="center">
+            <%= f.submit class: "btn btn-outline-dark my-2 my-sm-0"%>
+          </div>
         <% end %>
         <div class="edit-delete mt-2">
-
           <div class="edit-font">
             <% if policy(@item).edit? %>
-            <%= link_to "Edit", edit_item_path(@item.id) %>
+              <%= link_to "Edit", edit_item_path(@item.id) %>
             <% end %>
           </div>
-
           <div class="delete-font">
             <% if policy(@item).destroy? %>
-            <%= link_to "Delete", item_path(@item.id), method: 'delete' %>
+              <%= link_to "Delete", item_path(@item.id), method: 'delete' %>
             <% end %>
           </div>
         </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-
+</div>
