@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "starting the seed..."
-Profile.destroy_all
-Booking.destroy_all
-User.destroy_all
-Item.destroy_all
+# Profile.destroy_all
+# Booking.destroy_all
+# User.destroy_all
+# Item.destroy_all
 
 puts "old records destroyed"
 
@@ -59,7 +59,7 @@ item = Item.create!(title: "Mountain bike",
                     owner_id: owner.id )
 locations.shift
 
-owner = User.new(email: Faker::Internet.email,
+owner = User.new(email: 'antoinette.monnier1@gmail.com',
                  password: 'topsecret',
                  password_confirmation: 'topsecret')
 owner.save(validate: false)
@@ -71,14 +71,14 @@ item = Item.create!(title: "Performance skis",
                     owner_id: owner.id )
 locations.shift
 
-owner = User.new(email: Faker::Internet.email,
+owner = User.new(email: 'chicha.marisa@gmail.com',
                  password: 'topsecret',
                  password_confirmation: 'topsecret')
 owner.save(validate: false)
-item = Item.create!(title: "Wet suit, size lrg",
-                    remote_photo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS780ZRQovktuLCRkZArG7UZai-O77IisgmvWlVwhY382lco0wezg',
-                    description: 'Great for those cold days in the water, will keep you going!',
-                    price: 15,
+item = Item.create!(title: "Badass Skateboard",
+                    remote_photo_url: 'https://media.vogue.com/r/pass/2018/03/07/00-social-crop.jpg',
+                    description: "This is an amazing skateboard, rustic so it looks like you skate a lot. Even if you don't - no worries, just bring it to brunch places as a chick magnet, possibly increase 50% of your attractiveness",
+                    price: 10,
                     address: locations.first,
                     owner_id: owner.id )
 locations.shift
