@@ -10,7 +10,7 @@
         <%= link_to item_path(item) do  %>
           <%= cl_image_tag(item.photo, class: "item_photo") %>
           <h4><%= item.title %></h4>
-          <p><%= item.description %></p>
+          <p><%= truncate item.description, length: 100 %></p>
           <p class="price">€<%= item.price %></p>
         <% end %>
       </div>
