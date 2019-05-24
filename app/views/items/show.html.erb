@@ -6,8 +6,8 @@
     <div class="col-8">
       <div class="flat-show-card">
         <div class="flex-tile">
-        <h4><%= @item.title %></h4>
-        <h4 class="price">€<%= @item.price %></h4></h4>
+          <h4><%= @item.title %></h4>
+          <h4 class="price">€<%= @item.price %></h4></h4>
         </div>
         <p><%= @item.address %></p>
       </div>
@@ -23,9 +23,25 @@
         <%= simple_form_for [@item, @booking] do |f| %>
         <%= f.input :start_date, as: :string, required: true, input_html: {id: "start_date"} %>
         <%= f.input :end_date, as: :string, required: true, input_html: {id: "end_date"} %>
+        <div align="center">
+
         <%= f.submit %>
-        <%#= link_to "Book", new_item_booking_path(@item) %>
+        </div>
         <% end %>
+        <div class="edit-delete mt-2">
+
+          <div class="edit-font">
+            <% if policy(@item).edit? %>
+            <%= link_to "Edit", edit_item_path(@item.id) %>
+            <% end %>
+          </div>
+
+          <div class="delete-font">
+            <% if policy(@item).destroy? %>
+            <%= link_to "Delete", item_path(@item.id), method: 'delete' %>
+            <% end %>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>
