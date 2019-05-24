@@ -3,6 +3,7 @@
 <h1>My profile</h1>
   <p><%=  @user.email %></p>
   <p><%=  @user.username %></p>
+  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
     <h2 class = "title">My listing</h2>
       <div class="row">
       <% @owned_items.each do |item| %>
@@ -18,7 +19,7 @@
         <% end %>
       </div>
 
-   <h4 class = "title">My bookings</h4>
+   <h2 class = "title">My bookings</h2>
       <div class="row">
     <% @booked_items.each do |item| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
