@@ -1,36 +1,44 @@
 <div class = "container" >
-
-<h1>My profile</h1>
-  <p><%=  @user.email %></p>
+  <div class = "profile-card text-align">
+  <h1>My profile</h1>
+  <p><%= @user.email %></p>
   <p><%=  @user.username %></p>
-  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-    <h2 class = "title">My listing</h2>
-      <div class="row">
+  <%= cl_image_tag @user.photo, class: "profile-pic" %>
+  </div>
+    <div class="d-flex">
+
+    <div class = "card-products">
+      <h2>My listing</h2>
       <% @owned_items.each do |item| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-trip">
+          <%= cl_image_tag item.photo %>
+          <div>
             <h3><%= item.title %></h3>
             <p><%= item.description %></p>
-            </div>
           </div>
-        </div>
-        <% end %>
-      </div>
-
-   <h2 class = "title">My bookings</h2>
-      <div class="row">
-    <% @booked_items.each do |item| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h5><%= item.title %></h5>
-              <p><%= item.description %></p>
-            </div>
-          </div>
+          <h2 class="card-trip-pricing"><%= item.price %>€</h2>
         </div>
       </div>
       <% end %>
+    </div>
+
+    <div class = "card-products">
+      <h2>My bookings</h2>
+      <% @booked_items.each do |item| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-trip">
+          <%= cl_image_tag item.photo %>
+          <div>
+            <h3><%= item.title %></h3>
+            <p><%= item.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= item.price %>€</h2>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
 </div>
+
