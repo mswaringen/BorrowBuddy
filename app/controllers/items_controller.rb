@@ -42,6 +42,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    authorize @item
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    authorize @item
+    if @item.update(item_params)
+    redirect_to item_path(@item), notice: 'Item has been edited'
+  else
+    render :edit
+  end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    authorize @item
+    redirect_to items_path, notice: 'Item has been deleted'
+  end
+
   private
 
   def item_params
