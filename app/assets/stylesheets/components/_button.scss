@@ -1,5 +1,8 @@
-.profile_button {
-
+.button {
   margin-top : 50px;
+
+  &:hover {
+  border: 2px solid #1EDD88;
+  }
 }
 
