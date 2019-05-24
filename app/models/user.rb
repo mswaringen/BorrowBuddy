@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one :profile
   after_save :create_profile
 
+  mount_uploader :photo, PhotoUploader
+
   validates :email, uniqueness: true, presence: true
 
 
